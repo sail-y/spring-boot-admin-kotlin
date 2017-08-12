@@ -68,12 +68,7 @@ window.utils = {
                 request.setRequestHeader("Authorization", token);
             },
             success: function (res) {
-                if (res.code && res.code != 200) {
-                    _this.showTip(res.msg);
-                    return;
-                }
-
-                if (callback) callback(res);
+                _this.getData(res, callback);
             },
             fail: function () {
             }
@@ -92,12 +87,7 @@ window.utils = {
                 request.setRequestHeader("Authorization", token);
             },
             success: function (res) {
-                if (res.code && res.code != 200) {
-                    _this.showTip(res.msg);
-                    return;
-                }
-
-                if (callback) callback(res);
+                _this.getData(res, callback);
             },
             fail: function () {
             }
@@ -116,12 +106,7 @@ window.utils = {
             },
             data: JSON.stringify(param ? param : {}),
             success: function (res) {
-                if (res.code && res.code != 200) {
-                    _this.showTip(res.msg);
-                    return;
-                }
-
-                if (callback) callback(res);
+                _this.getData(res, callback);;
             },
             fail: function () {
             }
@@ -156,12 +141,7 @@ window.utils = {
                 request.setRequestHeader("Authorization", token);
             },
             success: function (res) {
-                if (res.code && res.code != 200) {
-                    _this.showTip(res.msg);
-                    return;
-                }
-
-                if (callback) callback(res);
+                _this.getData(res, callback);
             },
             fail: function () {
             }
@@ -171,9 +151,10 @@ window.utils = {
 
     getData: function (res, callback) {
         var _this = this;
-        if (res.code && res.code != 200) {
+        if (res.code && res.code !== 200) {
             _this.showTip(res.msg);
-            if (res.code == 10002) {
+
+            if (res.code === 10002) {
                 setTimeout(function () {
                     window.location.href = "../login/login.html";
                 }, 1500);

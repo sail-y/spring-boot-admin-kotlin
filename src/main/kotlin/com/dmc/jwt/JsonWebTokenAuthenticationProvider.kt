@@ -29,8 +29,10 @@ class JsonWebTokenAuthenticationProvider : AuthenticationProvider {
         // Only process the PreAuthenticatedAuthenticationToken
         if (authentication.javaClass.isAssignableFrom(PreAuthenticatedAuthenticationToken::class.java) && authentication.principal != null) {
             val tokenHeader = authentication.principal as String
-            val userDetails: UserDetails = parseToken(tokenHeader)
-            authenticatedUser = JsonWebTokenAuthentication(userDetails, tokenHeader)
+            val userDetails: UserDetails? = parseToken(tokenHeader)
+            if (userDetails != null) {
+                authenticatedUser = JsonWebTokenAuthentication(userDetails, tokenHeader)
+            }
         } else {
             // It is already a JsonWebTokenAuthentication
             authenticatedUser = authentication
@@ -38,16 +40,17 @@ class JsonWebTokenAuthenticationProvider : AuthenticationProvider {
         return authenticatedUser
     }
 
-    private fun parseToken(tokenHeader: String): UserDetails {
+    private fun parseToken(tokenHeader: String): UserDetails? {
 
         val authTokenDetails = tokenService.parseAndValidate(tokenHeader)
 
         val authorities = authTokenDetails?.roleNames?.map { it -> SimpleGrantedAuthority(it) }
         // userId介入Spring Security
-        val principal: UserDetails = User(authTokenDetails?.id.toString(), "",
-                authorities)
-
-        return principal
+        if (authTokenDetails != null) {
+            return User(authTokenDetails.id.toString(), "",
+                    authorities)
+        }
+        return null
     }
 
     override fun supports(authentication: Class<*>): Boolean {
