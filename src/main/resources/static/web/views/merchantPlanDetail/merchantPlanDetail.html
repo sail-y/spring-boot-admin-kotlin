@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+<title>后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../../common/css/common.css">
+    <link rel="stylesheet" type="text/css" href="./merchantPlanDetail.css">
+</head>
+<body>
+<div class="loading" id="loading">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+<div id="tips"></div>
+<!-- modal end -->
+<div class="page">
+    <div class="main-box">
+
+        <div class="line top-line">
+            <span class="line-name">公司名称:</span>
+            <input  disabled="disabled" class="inp merchant-name">
+        </div>
+
+        <div class="line">
+            <span class="line-name">金融方案:</span>
+            <input  disabled="disabled" class="inp plan-name">
+        </div>
+
+        <div class="line p-line">
+            <span class="line-name">原始成本:</span>
+            <input  disabled="disabled" class="inp orig-cost">
+        </div>
+
+        <div class="line p-line">
+            <span class="line-name">加层成本:</span>
+            <input  disabled="disabled" class="inp add-cost">
+        </div>
+
+        <div class="line p-line">
+            <span class="line-name">加层方式:</span>
+            <input  disabled="disabled" class="inp add-way">
+        </div>
+
+        <div class="line p-line">
+            <span class="line-name">前期月还款:</span>
+            <input  disabled="disabled" class="inp pre-month-amount">
+        </div>
+
+        <div class="line p-line">
+            <span class="line-name">后期月还款:</span>
+            <input  disabled="disabled" class="inp later-month-amount" >
+        </div>
+    </div>
+</div>
+
+
+<script src="../../common/js/base.min.js"></script>
+<script type="text/javascript" src="../../common/js/sea.js"></script>
+<script type="text/javascript" src="../../common/js/utils.js"></script>
+<script type="text/javascript" src="../../common/js/common.js"></script>
+<script seajs type="text/javascript" src="./merchantPlanDetail.js"></script>
+</body>
+</html>

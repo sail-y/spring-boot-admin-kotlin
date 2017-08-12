@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+<title>后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../../common/css/common.css">
+    <link href="../../common/ui/css/admin/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../common/ui/css/css3/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="../../common/ui/css/fonts.css" rel="stylesheet" type="text/css"/>
+    <link href="../../common/ui/css/icons.css" rel="stylesheet" type="text/css"/>
+    <link href="../../common/ui/css/admin/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../common/ui/css/admin/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../../common/ztree/css/tree.css" type="text/css">
+    <link rel="stylesheet" href="../../common/ztree/css/metroStyle/metroStyle.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./repaymentOrder.css">
+    
+    <!-- <link href="../../common/datetimepicker/bootstrapv3/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../common/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen"> -->
+</head>
+<body>
+<div class="loading" id="loading">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+<div id="tips"></div>
+<div class="role-view">
+    <div class="role-box">
+        <span class="close-btn">x</span>
+        <ul id="role" class="ztree"></ul>
+        <button class="btn btn-primary btn-xs auth-sure">确定</button>
+    </div>
+</div>
+<div class="page">
+	<!-- <div id="searchBox" class="search-box">
+		<form id="search">
+	    	<input class="inp name" placeholder="姓名"></input>
+	    	<input class="inp schoolName" placeholder="学校"></input>
+	    	<input class="inp compName" placeholder="公司"></input>
+	    	<input class="inp payTimeStart" placeholder="起始时间"></input>
+	    	<span>到</span>
+	    	<input class="inp payTimeEnd" placeholder="结束时间"></input>
+    	</form>
+		<button class="search-btn btn btn-primary btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> 搜索</button>
+    </div> -->
+    
+    <form id="searchForm">
+        <div class="search-box">
+            <div class="search-group">
+                <input type="text" name="orderNumber" placeholder="订单编号"/>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-xs search-btn margin-left-15 margin-right-5"><i class="fa fa-search"
+                                                                               aria-hidden="true"></i> 搜索
+            </button>
+            <button type="reset" class="btn btn-primary btn-xs"><i class="fa fa-times" aria-hidden="true"></i> 清空
+            </button>
+        </div>
+    </form>
+    
+    
+    <div id="toolBox">
+
+    </div>
+    
+    
+    <table id="table" class="table table-striped">
+        <thead>
+        <tr>
+            <th>订单编号</th>
+            <th>借款申请编号</th>
+            <th>订单金额</th>
+            <th>生成日期</th>
+            <th>截止日期</th>
+            <th>本金及利息</th>
+            <th>服务费</th>
+            <th>加层费</th> 
+            <th>还款状态</th>
+            <th>还款时间</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<!-- <script type="text/javascript" src="../../common/datetimepicker/bootstrapv3/jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../common/datetimepicker/bootstrapv3/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../common/datetimepicker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../common/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	$('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+</script> -->
+
+<script type="text/template" id="buttonTemplate">
+    <%if($.inArray("/role-post",resourceData) > -1){%>
+    <button class="add-btn btn btn-primary btn-xs" data-text="添加角色" data-id="addRole"
+            data-link="../addRole/addRole.html"><i class="fa fa-plus" aria-hidden="true"></i> 添加
+    </button>
+    <%}%>
+    <button class="refresh-btn btn btn-primary btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> 刷新</button>
+</script>
+<script src="../../common/js/base.min.js"></script>
+<script type="text/javascript" src="../../common/js/sea.js"></script>
+<script type="text/javascript" src="../../common/ui/js/admin/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../common/ui/js/admin/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../../common/ui/js/admin/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="../../common/ui/js/admin/colResizable-1.5.min.js"></script>
+<script type="text/javascript" src="../../common/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../common/ztree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="../../common/js/ext.datatable.js"></script>
+<script type="text/javascript" src="../../common/js/utils.js"></script>
+<script type="text/javascript" src="../../common/js/common.js"></script>
+<script seajs type="text/javascript" src="./repaymentOrder.js"></script>
+</body>
+</html>

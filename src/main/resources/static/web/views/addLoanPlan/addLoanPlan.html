@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+<title>后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../../common/css/common.css">
+    <link rel="stylesheet" type="text/css" href="./addLoanPlan.css">
+</head>
+<body>
+<div class="loading" id="loading">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+<div id="tips"></div>
+<!-- modal end -->
+<div class="page">
+    <div class="main-box">
+
+        <div class="line top-line">
+            <span class="line-name">方案名称:</span>
+            <input class="inp finance-name" placeholder="请输入方案名称"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name">实际年化:</span>
+            <input class="inp actual-annual" placeholder="请输入实际年化"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name">前期:</span>
+            <input class="inp early-stage" placeholder="请输入前期"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name">后期:</span>
+            <input class="inp later-stage" placeholder="请输入后期"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name">前期费率:</span>
+            <input class="inp early-rate" placeholder="请输入前期费率"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name">后期费率:</span>
+            <input class="inp later-rate" placeholder="请输入后期费率"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name">名义利率:</span>
+            <input class="inp added-rate" placeholder="请输入名义利率"></input>
+        </div>
+
+        <div class="line">
+            <span class="line-name"></span>
+            <button class="btn sure-btn de-btn btn-default">添加</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../common/js/base.min.js"></script>
+<script type="text/javascript" src="../../common/js/sea.js"></script>
+<script type="text/javascript" src="../../common/js/utils.js"></script>
+<script type="text/javascript" src="../../common/js/common.js"></script>
+<script seajs type="text/javascript" src="./addLoanPlan.js"></script>
+</body>
+</html>

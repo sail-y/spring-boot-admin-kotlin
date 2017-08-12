@@ -1,0 +1,28 @@
+{
+  "name": "kalendae",
+  "homepage": "https://github.com/chipersoft/kalendae",
+  "authors": [
+    "Jarvis Badgley",
+    "Geremia Taglialatela"
+  ],
+  "main": ["build/kalendae.min.js", "build/kalendae.css"],
+  "description": "A framework agnostic javascript date picker.",
+  "keywords": [
+    "datepicker",
+    "kalendae",
+    "calendar",
+    "purejs"
+  ],
+  "dependencies": {
+    "moment": "2.9.0"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ]
+}

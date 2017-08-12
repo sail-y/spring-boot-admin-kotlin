@@ -1,0 +1,31 @@
+server:
+  port: 10002
+
+spring:
+  profiles:
+    active: dev
+  jackson:
+        default-property-inclusion: non_null
+        date-format: "yyyy-MM-dd HH:mm:ss"
+        time-zone: Asia/Shanghai
+
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+  type-handlers-package: com.wodel.handler
+
+mapper:
+    mappers:
+        - tk.mybatis.mapper.common.Mapper
+    not-empty: false
+    identity: mysql
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
